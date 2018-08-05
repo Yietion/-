@@ -11,8 +11,10 @@
 |
 */
 
-Route::get('/', "IndexController@index");
+Route::get('/', "PagesController@root");
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::group(['prefix' => 'web'], function(){
+	Route::resource('users', 'UsersController', ['only' => ['show', 'update', 'edit']]);
+});

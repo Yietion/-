@@ -17,10 +17,12 @@ class User extends Authenticatable
     public function notify($instance)
     {
     	//当前用户是自己的时候不用通知
-    	if($this->id == Auth){
-    		return ;
+    	if(Auth::check()){
+	    	if($this->id == Auth::user()->id){
+	    		return ;
+	    	}
     	}
-    	$this->increment('notification_count');
+    	//$this->increment('notification_count');
     	$this->laravelNotify($instance);
     }
 
