@@ -176,7 +176,10 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-
+		//添加表单
+		Collective\Html\HtmlServiceProvider::class,
+		//添加macdown
+		Chenhua\MarkdownEditor\MarkdownEditorServiceProvider::class,
     ],
 
     /*
@@ -225,7 +228,11 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-
+		//表单
+		'Form' => Collective\Html\FormFacade::class,
+		'Html' => Collective\Html\HtmlFacade::class,
+		//添加macdown
+		'MarkdownEditor' => Chenhua\MarkdownEditor\Facades\MarkdownEditor::class,
     ],
 
 ];

@@ -34,8 +34,23 @@ img {
 		        </a>
 		    </div>
 		</div>
+		
 		<div class="col-sm-12">
 			456789
 		</div>
 	</div>
+	{!! Form::open(['url' => 'foo/bar']) !!}
+    		{!! Form::label('email', 'E-Mail Address') !!}
+    		{!! Form::text('username', '', ['class' => 'form-input', 'style' => 'border:1px solid red']) !!}
+    		{!! Form::password('password', ['class' => 'form-input']) !!}
+    		{!! Form::email('email', $value = '549166802', $attributes = ['class' => 'form-input']) !!}
+    		{!! Form::checkbox('name', 'value') !!}
+    		{!! Form::date('name', \Carbon\Carbon::now()) !!}
+    		{!! Form::file('image') !!}
+    		{!! Form::select('animal', [
+		        'Cats' => ['leopard' => 'Leopard'],
+		        'Dogs' => ['spaniel' => 'Spaniel'],
+		    ]) !!}
+		    {!! Form::selectMonth('month') !!}
+		{!! Form::close() !!}
 @endsection
